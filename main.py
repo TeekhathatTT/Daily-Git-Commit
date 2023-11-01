@@ -36,7 +36,7 @@ def commit_repository(yaml_data):
         print("No data to commit.")
         return
 
-    repo = Repo.clone_from('https://github.com/TeekhathatTT/Daily-Git-Commit', 'D:\daily_commit')
+    repo = Repo('.')
     repo.index.add([FILE_TO_COMMIT_NAME])
     commit_message = f'Updated {yaml_data["UPDATE_TIMES"]} times. Last update was on {yaml_data["LAST_UPDATE"]}.'
     repo.index.commit(commit_message)
@@ -47,3 +47,5 @@ def commit_repository(yaml_data):
 if __name__ == '__main__':
     updated_yaml_data = update_file_to_commit()
     commit_repository(updated_yaml_data)
+
+    # print(Repo('D:/daily_commit/.git/'))
