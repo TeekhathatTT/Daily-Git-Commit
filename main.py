@@ -1,8 +1,9 @@
 import yaml
 from datetime import datetime
 from git import Repo
+import time 
 
-FILE_TO_COMMIT_NAME = 'D:/daily_commit/update_me.yaml'
+FILE_TO_COMMIT_NAME = 'D:/daily_commit/update_me.yaml_2'
 
 
 def update_file_to_commit():
@@ -36,7 +37,14 @@ def commit_repository(yaml_data):
         print("No data to commit.")
         return
 
-    repo = Repo('.')
+    FILE_TO_COMMIT_NAME = 'update_me.yaml_2'
+
+
+    repo_path = 'D:/daily_commit'
+
+
+    repo = Repo(repo_path)
+
     repo.index.add([FILE_TO_COMMIT_NAME])
     commit_message = f'Updated {yaml_data["UPDATE_TIMES"]} times. Last update was on {yaml_data["LAST_UPDATE"]}.'
     repo.index.commit(commit_message)
@@ -45,7 +53,10 @@ def commit_repository(yaml_data):
 
 
 if __name__ == '__main__':
-    updated_yaml_data = update_file_to_commit()
-    commit_repository(updated_yaml_data)
 
-    # print(Repo('D:/daily_commit/.git/'))
+    # for i in range(100000):
+
+        updated_yaml_data = update_file_to_commit()
+        commit_repository(updated_yaml_data)
+        # time.sleep(5)
+        
