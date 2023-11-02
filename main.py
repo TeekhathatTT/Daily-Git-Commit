@@ -3,7 +3,7 @@ from datetime import datetime
 from git import Repo
 import time 
 
-FILE_TO_COMMIT_NAME = 'D:/daily_commit/update_me.yaml_2'
+FILE_TO_COMMIT_NAME = 'D:/daily_commit/update_me.yaml'
 
 
 def update_file_to_commit():
@@ -37,7 +37,7 @@ def commit_repository(yaml_data):
         print("No data to commit.")
         return
 
-    FILE_TO_COMMIT_NAME = 'update_me.yaml_2'
+    FILE_TO_COMMIT_NAME = 'update_me.yaml'
 
 
     repo_path = 'D:/daily_commit'
