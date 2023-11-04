@@ -3,7 +3,7 @@ from datetime import datetime
 from git import Repo
 import time 
 
-FILE_TO_COMMIT_NAME = 'D:/daily_commit/update_me.yaml'
+FILE_TO_COMMIT_NAME = '/home/theekhathat/Downloads/Daily-Git-Commit/update_me.yaml'
 
 
 def update_file_to_commit():
@@ -40,7 +40,7 @@ def commit_repository(yaml_data):
     FILE_TO_COMMIT_NAME = 'update_me.yaml'
 
 
-    repo_path = 'D:/daily_commit'
+    repo_path = '/home/theekhathat/Downloads/Daily-Git-Commit'
 
 
     repo = Repo(repo_path)
@@ -53,10 +53,10 @@ def commit_repository(yaml_data):
 
 
 if __name__ == '__main__':
-
-    # for i in range(100000):
+    
+    while 1:
 
         updated_yaml_data = update_file_to_commit()
         commit_repository(updated_yaml_data)
-        # time.sleep(5)
+        time.sleep(1)
         
